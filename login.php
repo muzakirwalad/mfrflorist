@@ -1,64 +1,63 @@
-<!-- <?php
-session_start();
-$pesan ="";
+<?php
+ session_start(); 
+  $pesan ="";
 
-if(isset($_POST['tombol'])){
-
-  //1. Koneksi data ke database 
+  if(isset($_POST['tombol'])){
+  //1. koneksi dulu ke database
   include_once("koneksi.php");
 
-  //2. Mengambil Nilai Dari Input
-  $email =$_POST['email'];
+  //2. mengambil nilai input
+  $email = $_POST['email'];
   $password = md5($_POST['password']);
 
-  //3. Menjalankan Query
-  $qry = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+  //3. menulis query
+  $qry = "SELECT * FROM user WHERE email='$email' 
+  AND password='$password'";
 
-  //4. Jalankan Query
+  //4. jalankan query
   $result = mysqli_query($con,$qry);
-
-  //5. menghitung jumlah hasil query
+ 
+  //5. menghitung jumlah hasil
   $hitung = mysqli_num_rows($result);
 
-  if($hitung){
-    //Proses Login
+  if($hitung > 0){
+    //proses login
 
-    // Mengambil seluruh Data Login
+    //1. mengambil seluruh data login
     $data = mysqli_fetch_array($result);
-    $id   = $data ['id'];
-    $nama = $data ['nama'];
+
+    $id = $data['id'];
+    $nama = $data['nama'];
 
     if($_POST['ingat'] == "yes"){
-      //pembutan cookie
-      setcookie("cid",$id, time() + (60*60*24*3), "/");
-      setcookie("cnama",$nama, time() + (60*60*24*3), "/");
-      setcookie("cemail",$email, time() + (60*60*24*3), "/");
-
-    }else{
-    // Pembuatan session
+      // pembuatan cookie
+    setcookie("cid",$id, time() + (60*60*24*3),"/");
+    setcookie("cnama",$nama, time() + (60*60*24*3),"/");
+    setcookie("cemail",$email, time() + (60*60*24*3),"/");
+  }else {
+    //PEMBUATAN SESSION
     $_SESSION['sid'] = $id;
     $_SESSION['snama'] = $nama;
     $_SESSION['semail'] = $email;
-
-    }
-
-    // Update Las_LOG
-    $qry_update = "UPDATE users SET last_log=now() WHERE id= '$id'";
+  }
+    //update last log
+    $qry_update = "UPDATE user SET last_log='now()'
+    WHERE id='$id'";
     $res_update = mysqli_query($con, $qry_update);
 
-    //Pengalihan Ke Halaman Index 
-  ?>
+    //pengalihan ke halaman index
+    ?>
     <script>
-        document.location="index.php";
-    </script>
-  <?php
-
+      document.location="index.php";
+      </script>
+    <?php
   }else{
-    //login gagal
-      $pesan ='<div class="alert alert-danger" role="alert">Login Tidak Valid.</div>';
+  $pesan = '<div class="alert alert-danger" role="alert">
+  Login Gagal
+  </div>';
+   }
   }
-}
-?> -->
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,16 +77,16 @@ if(isset($_POST['tombol'])){
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>MFR</b>FLORIST</a>
+    <a href="index2.html"><b>MFR</b>FLORIST</a>
   </div>
   <!-- /.login-logo -->
   <?php
-   echo $pesan
+  echo $pesan;
   ?>
-  
+
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg"></p>
+      <p class="login-box-msg">LOGIN</p>
 
       <form action="login.php" method="post">
         <div class="input-group mb-3">
@@ -109,7 +108,7 @@ if(isset($_POST['tombol'])){
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
-              <input type="checkbox" id="remember" name="ingat" value="yes">
+              <input type="checkbox" id="remember">
               <label for="remember">
                 Remember Me
               </label>
@@ -123,19 +122,18 @@ if(isset($_POST['tombol'])){
         </div>
       </form>
 
-
-    
-    </div>
+      <div class="social-auth-links text-center mb-3">
+        
     <!-- /.login-card-body -->
   </div>
 </div>
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../../plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
 </body>
 </html>

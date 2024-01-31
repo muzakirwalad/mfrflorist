@@ -1,8 +1,7 @@
-<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="../../index3.html" class="brand-link">
-      <img src="dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="#" class="brand-link">
+      <img src="dist/img/MFR FLORIST LOGO.png" alt="MFR florist" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">MFR FLORIST</span>
     </a>
 
@@ -11,48 +10,34 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/avatar4.png" class="img-circle elevation-2" alt="User Image">
+          <img src="dist/img/icon.png" class="img-circle elevation-2" alt="User Image" height="1" width="1">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Muzakir Walad</a>
+        <a href="#" class="d-block">user</a>
         </div>
       </div>
 
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      
             <a href="index.php" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-                
-              </p>
-            </a>
-            
-          </li>
-          <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                jenis bunga
-                
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="jurusan.php" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                stok barang
-               
-              </p>
-            </a>
-            
-          </li>
+            <i class="fas fa-home mr-2"></i>
+            <p>Dashboard</p>
+        </a>
+            <a href="pemesanan.php" class="nav-link">
+            <i class="fas fa-shopping-bag mr-2"></i> 
+            <p>Pemesanan</p>
+        </a>
+            <a href="stockbarang.php" class="nav-link">
+            <i class="fas fa-layer-group mr-2"></i>
+            <p>stock barang</p>
+        </a>
+            <a href="logout.php" class="nav-link">
+            <i class="fas fa-chevron-right mr-2"></i>
+            <p>Logout</p>
+        </a>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

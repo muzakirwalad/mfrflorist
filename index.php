@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mfr FLORIST</title>
+  <title>mfrflorist | dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -65,40 +65,53 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info text-center">
-            <div class="inner">
-            <h3>Pemesanan</h3>
-            <i class="fas fa-shopping-cart"></i> 
-            </div>
-            <a href="pemesanan.php" class="small-box-footer">Lanjutkan <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-
-            </div>
-          
-            <div class="col-lg-3 col-6">
-            <div class="small-box bg-info text-center">
-            <div class="inner">
-            <h3>Stock barang</h3>
-            <i class="fas fa-layer-group"></i>
-            </div>
-            <a href="stockbarang.php" class="small-box-footer">Lanjutkan <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-
-            </div>
-            <div class="col-lg-3 col-6">
-            <div class="small-box bg-info text-center">
-            <div class="inner">
-            <h3>Stock barang</h3>
-            <i class="fas fa-layer-group"></i>
-            </div>
-            <a href="stockbarang.php" class="small-box-footer">Lanjutkan <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
            
+        <div class="col-lg-4 col-6">
+        <div class="small-box bg-green text-white text-center">
+        <div class="inner">
+        <h3 class="text-white">Pemesanan</h3>
+        <i class="fas fa-shopping-cart text-white"></i> 
         </div>
+        <a href="pemesanan.php" class="small-box-footer text-white">Lanjutkan <i class="fas fa-arrow-circle-right text-white"></i></a>
+        </div>
+
+
+
+          </div>        
+          <div class="col-lg-4  col-6">
+          <div class="small-box bg-danger text-white text-center">
+          <div class="inner">
+          <h3>Stock barang</h3>
+          <i class="fas fa-layer-group"></i>
+          </div>
+          <a href="stockbarang.php" class="small-box-footer text-white">Lanjutkan <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+
+            </div>
+            <div class="col-lg-4 col-6">
+            <div class="small-box bg-info text-white text-center">
+            <div class="inner">
+            <h3>pengantaran</h3>
+            <i class="fas fa-car-side"></i>
+            </div>
+            <a href="stockbarang.php" class="small-box-footer">Lanjutkan <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+
+          </div>
+          <!-- <div class="col-lg-3 col-6">
+          <div class="small-box bg-info text-white text-center">
+          <div class="inner">
+          <h3>pengantaran</h3>
+          <i class="fas fa-car-side"></i>
+          </div>
+          <a href="stockbarang.php" class="small-box-footer">Lanjutkan <i class="fas fa-arrow-circle-right"></i></a>
+          </div> -->
+
+           
+        
         <!-- /.row -->
         <!-- Main row -->
+      
         
 
   <!-- Control Sidebar -->

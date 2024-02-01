@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mfrflorist | dashboard</title>
+  <title>mfrflorist | pemesanan</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -47,12 +47,15 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+          <div>
+          <i class="fas fa-shopping-cart fa-2x"></i>
+          <h1 class="m-3" style="display: inline-block; margin-left: 10px;">pemesanan</h1>
+          </div>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Pemesanan </li>
+              <li class="breadcrumb-item"><a href="#">pemesanan</a></li>
+              <li class="breadcrumb-item active">dashboard </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -67,45 +70,46 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
+                <h3 class="card-title">Data pengantaran</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    <th>no</th>
+                    <th>nama pemesan</th>
+                    <th>alamat</th>
+                    <th>no hp</th>
+                    <th>kd_barang</th>
+                    <th>nama_pengantar</th>
+                    <th>no_pengantar</th>                    
+                    <th>total</th>                    
                   </tr>
                   </thead>
                   <tbody>
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 4.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
-                    <td>X</td>
-                  </tr>
+                    <td>1</td>
+                    <td>ikmal gemoy</td>
+                    <td>aceh selatan</td>
+                    <td>123498675320</td>
+                    <td>282910</td>
+                    <td>raisul fata</td>
+                    <td>082234567281</td>                   
+                    <td>Rp.400.000.00</td>                   
                   <tr>
-                    <td>Trident</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>C</td>
-                  </tr>
+                  </thead>
+                  <tbody>
                   <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                    
+                    <th>#</th>
+                    <th>xxx</th>
+                    <th>xxx</th>
+                    <th>xxx</th>
+                    <th>xxx</th>
+                    <th>xxx</th>
+                    <th>xxx</th>
+                    <th>xxx</th>
                   </tr>
                   </tfoot>
                 </table>

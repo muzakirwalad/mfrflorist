@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>mfrflorist | pemesanan</title>
+  <title>mfrflorist | stok</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -54,7 +55,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item">pemesanan</li>
+              <li class="breadcrumb-item">Form Stock</li>
               <li class="breadcrumb-item"><a href="index.php">dashboard</a></li>
             </ol>
           </div><!-- /.col -->
@@ -82,7 +83,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-12">
-                                <h2>Input Pesanan</h2>
+                                <h2>Stok Barang</h2>
                             </div>
                             </div>
                             
@@ -90,57 +91,19 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-        <form action="proses_pemesanan.php" method="POST">
+        <form action="proses_stok.php" method="POST">
             <div class="mb-3">
-                <label for="exampleInputnama" class="form-label">Nama Lengkap</label>
+                <label for="kode" class="form-label">Kode</label>
+                <input type="kode" name="kode" class="form-control" id="kode">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputnama" class="form-label">Nama Barang</label>
                 <input type="nama" name="nama" class="form-control" id="exampleInputnama">
             </div>
-
-
             <div class="mb-3">
-                    <label for="barang" class="form-label">Nama Barang</label> <br>
-                    <select name="barang" id="barang" class="form-control" >
-                        <option value="papan bunga">Papan Bunga</option>
-                    </select>
-                    <div id="pemesananHelp" class="form-text"></div>
-                  </div>
-                <div class="mb-3">
-
-                <div class="mb-3">
-                    <label for="total" class="form-label">Jumlah Papan</label> <br>
-                    <select name="total" id="total" class="form-control" >
-                        <option selected>Jumlah</option>
-                        <option value="Rp180,000">Satu Papan</option>
-                        <option value="Rp350,000">Duoble Papan</option>
-                    </select>
-                    <div id="pemesananHelp" class="form-text"></div>
-                  </div>
-                <div class="mb-3">
-
-            <div class="mb-3">
-                <label for="tanggal" class="form-label">Tanggal Pemesanan</label>
-                <input type="date" name="tanggal" class="form-control" id="tanggal">
+                <label for="jumlah" class="form-label">Jumlah</label>
+                <input type="number" name="jumlah" class="form-control" id="jumlah">
             </div>
-            <div class="mb-3">
-                <label for="hp" class="form-label">No Hp</label>
-                <input type="number" name="hp" class="form-control" id="hp">
-            </div>
-            <div class="mb-3">
-                <label for="alamat" class="form-label">Alamat Pemesanan</label>
-                <input type="alamat" name="alamat" class="form-control" id="alamat">
-            </div>
-
-            <div class="mb-3">
-                    <label for="pengantar" class="form-label">Pengantar</label> <br>
-                    <select name="pengantar" id="pengantar" class="form-control" >
-                        <option selected>Nama Pengantar</option>
-                        <option value="Raisul Fatah">Raisul Fatah</option>
-                        <option value="Razin">Razin</option>
-                    </select>
-                    <div id="pemesananHelp" class="form-text"></div>
-                  </div>
-                <div class="mb-3">
-
             <button type="proses" class="btn btn-primary">Proses Data</button>
             <a class="btn btn-secondary" href="dana.php">Batal </a>
             </form>
@@ -181,6 +144,11 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+<script>
+    // Variabel untuk menyimpan data
+
+    // Fungsi untuk mengisi tabel dengan data
+</script>
 
 </body>
 </html>

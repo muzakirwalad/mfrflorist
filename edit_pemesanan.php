@@ -1,3 +1,12 @@
+<?php
+include_once("koneksi.php");
+$id = $_GET['id'];
+$qry = "SELECT * FROM pemesanan WHERE id='$id'";
+$data = mysqli_query($con,$qry);
+
+$ps = mysqli_fetch_array($data);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,16 +99,17 @@
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
-        <form action="proses_pemesanan.php" method="POST">
+        <form action="proses_editp.php" method="POST">
+        <input type="hidden" name="id" value="<?php echo $ps['id'] ?>">
             <div class="mb-3">
                 <label for="exampleInputnama" class="form-label">Nama Lengkap</label>
-                <input type="nama" name="nama" class="form-control" id="exampleInputnama">
+                <input type="nama" value="<?php echo $ps['nama'] ?>" name="nama" class="form-control" id="exampleInputnama">
             </div>
 
 
             <div class="mb-3">
                     <label for="barang" class="form-label">Nama Barang</label> <br>
-                    <select name="barang" id="barang" class="form-control" >
+                    <select name="barang" value="<?php echo $ps['barang'] ?>" id="barang" class="form-control" >
                         <option value="papan bunga">Papan Bunga</option>
                     </select>
                     <div id="pemesananHelp" class="form-text"></div>
@@ -108,7 +118,7 @@
 
                 <div class="mb-3">
                     <label for="total" class="form-label">Jumlah Papan</label> <br>
-                    <select name="total" id="total" class="form-control" >
+                    <select name="total" value="<?php echo $ps['total'] ?>" id="total" class="form-control" >
                         <option selected>Jumlah</option>
                         <option value="Rp180,000">Satu Papan</option>
                         <option value="Rp350,000">Duoble Papan</option>
@@ -119,20 +129,20 @@
 
             <div class="mb-3">
                 <label for="tanggal" class="form-label">Tanggal Pemesanan</label>
-                <input type="date" name="tanggal" class="form-control" id="tanggal">
+                <input type="date" value="<?php echo $ps['tanggal'] ?>" name="tanggal" class="form-control" id="tanggal">
             </div>
             <div class="mb-3">
                 <label for="hp" class="form-label">No Hp</label>
-                <input type="number" name="hp" class="form-control" id="hp">
+                <input type="number" value="<?php echo $ps['hp'] ?>" name="hp" class="form-control" id="hp">
             </div>
             <div class="mb-3">
                 <label for="alamat" class="form-label">Alamat Pemesanan</label>
-                <input type="alamat" name="alamat" class="form-control" id="alamat">
+                <input type="alamat" value="<?php echo $ps['alamat'] ?>" name="alamat" class="form-control" id="alamat">
             </div>
 
             <div class="mb-3">
                     <label for="pengantar" class="form-label">Pengantar</label> <br>
-                    <select name="pengantar" id="pengantar" class="form-control" >
+                    <select name="pengantar" value="<?php echo $ps['pengantar'] ?>" id="pengantar" class="form-control" >
                         <option selected>Nama Pengantar</option>
                         <option value="Raisul Fatah">Raisul Fatah</option>
                         <option value="Razin">Razin</option>

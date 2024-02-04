@@ -55,8 +55,8 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">stok barang</a></li>
-                                <li class="breadcrumb-item active">dashboard</li>
+                                <li class="breadcrumb-item">stok barang</a></li>
+                                <li class="breadcrumb-item"><a href="index.php">dashboard</a></li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -66,40 +66,72 @@
 
             <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">Data stock</h3>
-                                </div>
+            <div class="card">
+              <div class="card-header">
+                <h2 class="card-title">Stock Barang</h2>
+        <div class="float-sm-right">
+          <a class="btn btn-outline-dark mb-1" href="form_stok.php">Tambah Stock </a>
+      </div>
+      </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
-                                        <thead>
+                                    <thead>
                                             <tr>
                                                 <th>no</th>
-                                                <th>kd</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
+                                                <th>Kode Barang</th>
+                                                <th>Nama Barang</th>
+                                                <th>Stok Barang</th>
+                                                <th>aksi</th>
                                             </tr>
                                         </thead>
+                                        </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Trident</td>
-                                                <td>Internet Explorer 4.0</td>
-                                                <td>Win 95+</td>
-                                            </tr>
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Rendering engine</th>
-                                                <th>Browser</th>
-                                                <th>Platform(s)</th>
-                                                <th>Engine version</th>
-                                                <th>CSS grade</th>
-                                            </tr>
+                            <?php
+                            //1. membuat koneksi
+                            include_once("koneksi.php");
+                            //2. membuat query untuk menampilkan seluruh data
+                            $qry = "SELECT * FROM stok";
+                            //3. menjalankan query
+                            $tampil = mysqli_query($con,$qry);
+                            //4. menampilkan data menggunakan looping foreach
+                            $nomor = 1;
+                            foreach($tampil as $data){
+                            ?>
+                            <tr>
+                                <th scope="row"><?php echo $nomor++ ?></th>
+                                <td><?php echo $data['kode'] ?></td>
+                                <td><?php echo $data['nama'] ?></td>
+                                <td><?php echo $data['jumlah'] ?></td>  
+                                    <!-- Modal -->
+                                    <td>
+                                <a href="edit_stock.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-info"><i class="fa fa-solid fa-pen"></i></a>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>" class="btn btn-sm btn-danger "><i class="fa fa-solid fa-trash"></i></button></td>
+                                <!-- Modal -->
+                                <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Menghapus Data</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  apa benar data <b><?php echo $data['nama']?></b> ingin dihapus?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                                  <a href="hapus_stock.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
+                                </div>
+                              </div>
+                              </div>
+ 
+                            </tr>
+                            <?php
+                            }
+                            ?>
+                            
+                        </tbody>
+
                                         </tfoot>
                                     </table>
                                 </div>
@@ -122,8 +154,11 @@
         </div>
         <!-- ./wrapper -->
         <script src="plugins/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         <!-- Bootstrap 4 -->
         <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        
         <!-- DataTables & Plugins -->
         <script src="plugins/datatables/jquery.dataTables.min.js"></script>
         <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -137,25 +172,11 @@
         <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
         <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
         <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <!-- AdminLTE App -->
         <script src="dist/js/adminlte.min.js"></script>
         <!-- Page specific script -->
         <script>
-            $(function () {
-                $("#example1").DataTable({
-                    "responsive": true, "lengthChange": false, "autoWidth": false,
-                    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-                }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-                $('#example2').DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": false,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": false,
-                    "responsive": true,
-                });
-            });
         </script>
         <!-- AdminLTE for demo purposes -->
         <script src="dist/js/demo.js"></script>

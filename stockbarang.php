@@ -65,14 +65,14 @@
             <!-- /.content-header -->
 
             <!-- Main content -->
-            <section class="content">
-            <div class="card">
-              <div class="card-header">
-                <h2 class="card-title">Stock Barang</h2>
-        <div class="float-sm-right">
-          <a class="btn btn-outline-dark mb-1" href="form_stok.php">Tambah Stock </a>
-      </div>
-      </div>
+                     <section class="content">
+                         <div class="card">
+                           <div class="card-header">
+                            <h2 class="card-title">Stock Barang</h2>
+                             <div class="float-sm-right">
+                            <a class="btn btn-outline-dark mb-1" href="form_stok.php">Tambah Stock </a>
+                             </div>
+                           </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
